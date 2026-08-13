@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Education · OE-001</title>
+<style>
+:root{--bg:#f6f6f2;--paper:#fff;--ink:#171717;--muted:#6b6b66;--line:#deded7;--accent:#214d48}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+.top{position:sticky;top:0;background:rgba(246,246,242,.96);border-bottom:1px solid var(--line);z-index:5}
+.topin{max-width:1180px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:750}
+.brand a{text-decoration:none;color:inherit}
+.nav{display:flex;gap:22px;color:var(--muted);font-size:14px}
+.nav a{text-decoration:none;color:inherit}
+.shell{max-width:1180px;margin:auto;padding:28px 24px;display:grid;grid-template-columns:210px 1fr;gap:34px}
+.side{position:sticky;top:76px;align-self:start}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.side h3{margin:6px 0 4px}
+.meta{font-size:14px;color:var(--muted)}
+.progress{margin-top:24px}
+.bar{height:5px;background:#e7e7e1;border-radius:99px;overflow:hidden}
+.bar div{height:100%;width:10%;background:var(--accent)}
+.main{background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.035);min-height:760px}
+.page{max-width:760px;margin:auto;padding:64px 58px 74px}
+.hidden{display:none}
+.kicker{text-transform:uppercase;letter-spacing:.13em;font-size:12px;color:var(--muted);margin-bottom:16px}
+h1,h2{font-family:Georgia,serif;font-weight:500}
+h1{font-size:44px;line-height:1.08;margin:0 0 24px}
+h2{font-size:30px;margin:0 0 20px}
+.lead{font-family:Georgia,serif;font-size:21px}
+.rule{height:1px;background:var(--line);margin:36px 0}
+.btn{border:1px solid var(--accent);background:var(--accent);color:#fff;padding:12px 17px;border-radius:7px;font-weight:650;cursor:pointer}
+.btn.secondary{background:#fff;color:var(--accent)}
+.actions{display:flex;justify-content:space-between;align-items:center;margin-top:40px}
+.measurements{display:grid;grid-template-columns:repeat(5,1fr);gap:8px 16px;margin:26px 0;font-variant-numeric:tabular-nums}
+.measurements div{text-align:center;border-bottom:1px solid var(--line);padding:8px}
+.prompt{margin-top:30px}
+.prompt label{display:block;font-family:Georgia,serif;font-size:20px;margin-bottom:10px}
+textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fdfdfb}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+.footer{max-width:1180px;margin:auto;padding:0 24px 30px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.shell{grid-template-columns:1fr;padding:16px}.side{position:static}.page{padding:42px 22px 54px}.nav{display:none}.measurements{grid-template-columns:repeat(2,1fr)}h1{font-size:36px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand"><a href="../../">Open Education</a></div>
+    <nav class="nav">
+      <a href="../../">Inicio</a>
+      <a href="#">Experiencias</a>
+      <a href="#">Acerca de</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+<aside class="side">
+  <div class="eyebrow">Experiencia</div>
+  <h3>OE-001</h3>
+  <div class="meta">Variabilidad y observación</div>
+  <div class="meta">Primera experiencia</div>
+  <div class="progress">
+    <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:7px">
+      <span>Recorrido</span><span id="progressTxt">Inicio</span>
+    </div>
+    <div class="bar"><div id="progressBar"></div></div>
+  </div>
+</aside>
+
+<main class="main">
+
+<section id="landing" class="page">
+  <div class="kicker">Open Education · OE-001</div>
+  <h1>Una experiencia de observación y descubrimiento</h1>
+  <p class="lead">Aquí no comenzaremos con definiciones. Comenzaremos observando.</p>
+
+  <div class="rule"></div>
+
+  <h2>Presentación</h2>
+  <p>A lo largo de esta experiencia no encontrarás explicaciones previas sobre los conceptos que irás descubriendo. En su lugar, observarás un fenómeno, responderás preguntas, explorarás distintas formas de representar las observaciones y construirás progresivamente tus propias interpretaciones.</p>
+  <p>El propósito de este recorrido no es memorizar definiciones, sino desarrollar una forma de pensar basada en la observación, la exploración y el descubrimiento.</p>
+  <p>Tómate el tiempo que consideres necesario para responder cada actividad. En muchos casos, las preguntas más interesantes son aquellas cuya respuesta no aparece de inmediato.</p>
+  <p><strong>Comencemos.</strong></p>
+
+  <div class="actions">
+    <span></span>
+    <button class="btn" onclick="showExperience()">Entrar a la experiencia →</button>
+  </div>
+</section>
+
+<section id="experience" class="page hidden">
+  <div class="kicker">OE-001</div>
+  <h2>Un conjunto de observaciones</h2>
+
+  <p>Un estudiante desea caracterizar el diámetro de un alambre de cobre utilizando un tornillo micrométrico con una resolución de <strong>0,01 mm</strong>.</p>
+  <p>Para ello selecciona cinco posiciones distribuidas a lo largo del alambre. En cada posición realiza cinco mediciones, modificando ligeramente la orientación del alambre entre una medición y la siguiente.</p>
+  <p>Las veinticinco mediciones obtenidas se presentan a continuación.</p>
+
+  <div class="measurements">
+    <div>0,44</div><div>0,45</div><div>0,44</div><div>0,44</div><div>0,44</div>
+    <div>0,44</div><div>0,45</div><div>0,44</div><div>0,45</div><div>0,45</div>
+    <div>0,45</div><div>0,46</div><div>0,45</div><div>0,44</div><div>0,45</div>
+    <div>0,45</div><div>0,45</div><div>0,45</div><div>0,46</div><div>0,46</div>
+    <div>0,46</div><div>0,46</div><div>0,47</div><div>0,46</div><div>0,46</div>
+  </div>
+
+  <div class="rule"></div>
+
+  <p><em>Dedica unos minutos a observar las mediciones antes de intentar interpretarlas. En esta primera actividad no buscamos obtener respuestas, sino aprender a observar.</em></p>
+
+  <div class="prompt">
+    <label>1. ¿Qué observas al examinar este conjunto de mediciones?</label>
+    <textarea id="q1"></textarea>
+  </div>
+
+  <div class="prompt">
+    <label>2. ¿Qué información crees que podría obtenerse a partir de estas mediciones?</label>
+    <textarea id="q2"></textarea>
+  </div>
+
+  <div class="prompt">
+    <label>3. ¿Qué dificultades encuentras para responder la pregunta anterior?</label>
+    <textarea id="q3"></textarea>
+  </div>
+
+  <div class="prompt">
+    <label>4. Si pudieras modificar la forma en que se presentan estas mediciones para facilitar su observación, ¿qué cambiarías?</label>
+    <textarea id="q4"></textarea>
+  </div>
+
+  <div class="actions">
+    <button class="btn secondary" onclick="showLanding()">← Volver</button>
+    <button class="btn" onclick="saveLocal()">Conservar respuestas →</button>
+  </div>
+
+  <div id="savedMsg" class="note"></div>
+</section>
+
+</main>
+</div>
+
+<footer class="footer">
+  <span>Open Education · OE-001</span>
+  <span>Prototipo de experiencia</span>
+</footer>
+
+<script>
+function showLanding(){
+  document.getElementById('landing').classList.remove('hidden');
+  document.getElementById('experience').classList.add('hidden');
+  document.getElementById('progressBar').style.width='10%';
+  document.getElementById('progressTxt').textContent='Inicio';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showExperience(){
+  document.getElementById('landing').classList.add('hidden');
+  document.getElementById('experience').classList.remove('hidden');
+  document.getElementById('progressBar').style.width='20%';
+  document.getElementById('progressTxt').textContent='Paso 1';
+  ['q1','q2','q3','q4'].forEach(id=>{
+    const v=localStorage.getItem('OE001_'+id);
+    if(v!==null) document.getElementById(id).value=v;
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function saveLocal(){
+  ['q1','q2','q3','q4'].forEach(id=>{
+    localStorage.setItem('OE001_'+id,document.getElementById(id).value);
+  });
+  document.getElementById('savedMsg').textContent='Tus respuestas quedaron conservadas localmente en este navegador.';
+  document.getElementById('progressBar').style.width='28%';
+  document.getElementById('progressTxt').textContent='Primera observación';
+}
+</script>
+</body>
+</html>
