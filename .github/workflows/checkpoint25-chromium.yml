@@ -1,0 +1,51 @@
+name: Checkpoint 25 Chromium sentinels
+
+on:
+  push:
+    branches:
+      - checkpoint-25-browser-validation
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-sentinels:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: validation/checkpoint25
+    steps:
+      - name: Checkout candidate branch
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install pinned browser runner
+        run: npm install --no-save playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify deterministic baseline
+        run: |
+          sha256sum -c browser/golden.sha256
+          npm test
+
+      - name: Run browser sentinels
+        run: npm run browser:test
+
+      - name: Run external browser audit
+        run: npm run browser:audit > browser-results/audit.json
+
+      - name: Upload Checkpoint 25 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint25-Chromium-Evidence
+          path: validation/checkpoint25/browser-results
+          if-no-files-found: error
+          retention-days: 30
