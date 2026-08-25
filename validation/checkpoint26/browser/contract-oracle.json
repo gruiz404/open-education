@@ -1,0 +1,116 @@
+{
+  "schema_version": "oe-irp-f2-w1-oracle-0.1",
+  "checkpoint": 26,
+  "wave": "W1",
+  "title": "Transformación y recuperación",
+  "source": "CP23 · matriz F2 · selección W1 aprobada",
+  "cases": {
+    "C1-T01": {
+      "cycle": 1,
+      "heading": "Ordenar sin perder el conjunto",
+      "primary_action": "Ordenar por valor ascendente",
+      "recovery_action": "Deshacer ordenamiento",
+      "events": ["SORT_APPLIED", "UNDO_APPLIED"],
+      "recovery_contract": "INITIAL_HASH",
+      "after": {
+        "sort": {"field": "value", "direction": "ascending"},
+        "record_order": ["R02", "R04", "R05", "R01", "R03"]
+      }
+    },
+    "C1-T03": {
+      "cycle": 1,
+      "heading": "Filtrar sin perder información",
+      "primary_action": "Filtrar Grupo A",
+      "recovery_action": "Restablecer conjunto",
+      "events": ["FILTER_APPLIED", "FILTER_REVERTED", "SNAPSHOT_CAPTURED"],
+      "recovery_contract": "INITIAL_HASH",
+      "after": {
+        "visible_record_ids": ["R01", "R03", "R05"],
+        "record_count": 6
+      }
+    },
+    "C1-T05": {
+      "cycle": 1,
+      "heading": "Cambiar la representación",
+      "primary_action": "Mostrar gráfico de puntos",
+      "recovery_action": "Volver a tabla",
+      "events": ["REPRESENTATION_CHANGED", "UNDO_APPLIED"],
+      "recovery_contract": "INITIAL_HASH",
+      "after": {
+        "representation_id": "dot_plot",
+        "protected_fields": ["dataset_hash", "records"]
+      }
+    },
+    "C1-T07": {
+      "cycle": 1,
+      "heading": "Recuperar una agrupación",
+      "primary_action": "Restaurar agrupación original",
+      "recovery_action": "Volver a agrupación modificada",
+      "events": ["ORIGINAL_GROUPING_RESTORED", "MODIFIED_GROUPING_REACTIVATED"],
+      "recovery_contract": "INITIAL_HASH",
+      "after": {
+        "grouping_id": "grouping_original",
+        "groups": ["Norte", "Norte", "Sur", "Sur"],
+        "history": ["grouping_original", "grouping_modified"]
+      }
+    },
+    "C2-T04": {
+      "cycle": 2,
+      "heading": "Recorrer vistas sin perder el camino",
+      "primary_action": "Restaurar vista anterior",
+      "recovery_action": "Rehacer vista actual",
+      "events": ["PREVIOUS_VIEW_RESTORED", "REDO_APPLIED"],
+      "recovery_contract": "INITIAL_HASH",
+      "after": {
+        "active_view_id": "view_previous",
+        "forward": ["view_current"],
+        "history": ["view_previous", "view_current"]
+      }
+    },
+    "C2-T10": {
+      "cycle": 2,
+      "heading": "Cambiar de pregunta y conservar versiones",
+      "primary_action": "Cambiar a pregunta B",
+      "recovery_action": "Restaurar pregunta A",
+      "events": ["QUESTION_CHANGED", "QUESTION_VERSION_RESTORED"],
+      "recovery_contract": "QUESTION_A_WITH_V2_PRESERVED",
+      "after": {
+        "active_question_version": 2,
+        "version_count": 2,
+        "cycle": 2
+      }
+    },
+    "C3-T08": {
+      "cycle": 3,
+      "heading": "Reformular una relación provisional",
+      "primary_action": "Reformular relación",
+      "recovery_action": "Activar relación v1",
+      "events": ["RELATION_REFORMULATED", "RELATION_VERSION_ACTIVATED"],
+      "recovery_contract": "RELATION_V1_WITH_V2_PRESERVED",
+      "after": {
+        "active_relation_version": 2,
+        "version_count": 2,
+        "certification": "NONE"
+      }
+    },
+    "C3-T11": {
+      "cycle": 3,
+      "heading": "Cerrar y reabrir una hipótesis provisional",
+      "primary_action": "Abandonar hipótesis",
+      "recovery_action": "Reabrir hipótesis",
+      "events": ["HYPOTHESIS_ABANDONED", "HYPOTHESIS_REOPENED"],
+      "recovery_contract": "OPEN_WITH_CLOSURE_HISTORY",
+      "after": {
+        "hypothesis_status": "CLOSED_PROVISIONAL",
+        "closure_history_length": 1
+      }
+    }
+  },
+  "common_prohibitions": [
+    "No interpretar los datos por el lector",
+    "No recomendar una ruta",
+    "No puntuar ni penalizar",
+    "No certificar comprensión o logro",
+    "No borrar la historia necesaria para la recuperación"
+  ]
+}
