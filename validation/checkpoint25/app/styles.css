@@ -28,7 +28,7 @@ select, .scenario-picker button { border: 1px solid #8ca0af; border-radius: 9px;
 .instrument-panel h2 { color: #fff; }
 .instrument-panel dl { margin: 26px 0; }
 .instrument-panel dt { color: #a8c2d4; font-size: .74rem; font-weight: 800; letter-spacing: .08em; margin-top: 18px; text-transform: uppercase; }
-.instrument-panel dd { margin: 5px 0 0; line-height: 1.35; }
+.instrument-panel dd { margin: 5px 0 0; line-height: 1.35; overflow-wrap: anywhere; }
 .technical-limit { border-top: 1px solid rgba(255,255,255,.22); color: #d8e6ef; font-size: .84rem; line-height: 1.4; padding-top: 18px; }
 .technical-action { background: #e7f3fb; border: 0; border-radius: 9px; color: #164f7d; cursor: pointer; font-weight: 800; line-height: 1.25; margin-bottom: 14px; padding: 11px 12px; width: 100%; }
 .scene-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
