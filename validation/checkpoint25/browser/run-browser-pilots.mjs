@@ -167,11 +167,13 @@ async function runPilot(page, testId, networkRequests, consoleErrors) {
 
   if (testId === "C1-T03") await page.getByRole("button", {name: "Grupo A", exact: true}).click();
   else await page.evaluate(() => window.IRPF2.executePrimary());
+  await page.waitForFunction(() => document.querySelector("#experience")?.dataset.phase === "after");
   const after = await capturePhase(page, testId, "after", pilotDir);
 
   if (testId === "C1-T03") await page.getByRole("button", {name: "Restablecer", exact: true}).click();
   else if (testId === "C2-T02") await page.getByRole("button", {name: "Aplicar recuperación controlada", exact: true}).click();
   else await page.evaluate(() => window.IRPF2.executeRecovery());
+  await page.waitForFunction(() => document.querySelector("#experience")?.dataset.phase === "recovery");
   const recovery = await capturePhase(page, testId, "recovery", pilotDir);
 
   const actualEvents = await page.evaluate(() => window.IRPF2.run.events);
