@@ -39,7 +39,7 @@ jobs:
         run: npm run browser:test
 
       - name: Run external package audit
-        run: npm run browser:audit > browser-results/audit.json
+        run: node browser/audit-browser-results.mjs > browser-results/audit.json
 
       - name: Upload Checkpoint 26 evidence
         if: always()
