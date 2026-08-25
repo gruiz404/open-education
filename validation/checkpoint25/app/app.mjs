@@ -24,6 +24,7 @@ function paint() {
 }
 
 async function load(testId, {autoPrimary = true} = {}) {
+  selector.value = testId;
   run = await createRun(getFixture(testId));
   paint();
   if (autoPrimary && (testId === "C2-T02" || testId === "C3-T04")) {
