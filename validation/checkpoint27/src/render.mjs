@@ -71,13 +71,14 @@ function sceneBody(run) {
 
 export function renderExperienceHtml(run) {
   const id = run.fixture.test_id;
-  const action = run.phase === "before" ? `<button type="button" class="primary-action" data-action="primary">${primaryLabels[id]}</button>` : "";
+  const action = run.phase === "before" && id !== "C2-T02" ? `<button type="button" class="primary-action" data-action="primary">${primaryLabels[id]}</button>` : "";
   return `<section class="experience-card" aria-labelledby="scene-title"><p class="eyebrow">F2 · W2 · neutralidad y comparación</p><h2 id="scene-title">${headings[id]}</h2><div data-scene-body data-active-state="${escapeHtml(run.technical_status)}">${sceneBody(run)}</div>${action}</section>`;
 }
 
 export function renderShellHtml(run) {
   const id = run.fixture.test_id;
+  const systemRepair = run.phase === "before" && id === "C2-T02" ? `<button type="button" class="technical-action" data-action="primary">${primaryLabels[id]}</button>` : "";
   const recovery = run.phase === "after" ? `<button type="button" class="technical-action" data-action="recovery">${recoveryLabels[id]}</button>` : "";
   return `<main id="experience" aria-label="Experiencia ${id}" data-test-id="${id}" data-phase="${run.phase}">${renderExperienceHtml(run)}</main>
-    <aside class="instrument-panel" aria-label="Panel técnico"><p class="eyebrow">IRP-F2 · Checkpoint 27</p><h2>${id}</h2><dl><dt>Ola</dt><dd>W2 · Neutralidad y comparación</dd><dt>Escena</dt><dd>${escapeHtml(run.fixture.scene)}</dd><dt>Decisión</dt><dd>${escapeHtml(run.fixture.primary_decision)}</dd><dt>Estado técnico</dt><dd>${escapeHtml(run.technical_status)}</dd><dt>Eventos</dt><dd>${run.events.length}</dd><dt>Solicitudes externas</dt><dd>${run.network_requests.length}</dd></dl>${recovery}<p class="technical-limit">Valida neutralidad observable; no certifica comprensión, preferencia ni validez.</p></aside>`;
+    <aside class="instrument-panel" aria-label="Panel técnico"><p class="eyebrow">IRP-F2 · Checkpoint 27</p><h2>${id}</h2><dl><dt>Ola</dt><dd>W2 · Neutralidad y comparación</dd><dt>Escena</dt><dd>${escapeHtml(run.fixture.scene)}</dd><dt>Decisión</dt><dd>${escapeHtml(run.fixture.primary_decision)}</dd><dt>Estado técnico</dt><dd>${escapeHtml(run.technical_status)}</dd><dt>Eventos</dt><dd>${run.events.length}</dd><dt>Solicitudes externas</dt><dd>${run.network_requests.length}</dd></dl>${systemRepair}${recovery}<p class="technical-limit">Valida neutralidad observable; no certifica comprensión, preferencia ni validez.</p></aside>`;
 }

@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {getFixture, wave2Ids} from "../fixtures/catalog.mjs";
 import {createRun, executePrimary, executeRecovery, hashContent, stableStringify} from "../src/core.mjs";
-import {renderExperienceHtml} from "../src/render.mjs";
+import {renderExperienceHtml, renderShellHtml} from "../src/render.mjs";
 
 const execute = async (testId) => {
   const run = await createRun(getFixture(testId));
@@ -43,6 +43,8 @@ test("C2-T02 bloquea el default, neutraliza sin elección y remonta limpio", asy
   assert.equal(run.content.default_option, "view_B");
   assert.equal(run.content.interaction_enabled, false);
   assert.deepEqual(run.events.map(({event_type}) => event_type), ["SALIENCE_VIOLATION_DETECTED", "INTERACTION_BLOCKED"]);
+  assert.ok(!renderExperienceHtml(run).includes('data-action="primary"'));
+  assert.ok(renderShellHtml(run).includes('class="technical-action" data-action="primary"'));
   await executePrimary(run);
   assert.equal(run.content.default_option, null);
   assert.equal(run.content.reader_choice, null);

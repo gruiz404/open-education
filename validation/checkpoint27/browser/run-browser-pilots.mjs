@@ -103,7 +103,7 @@ async function domCheck(page, testId, phase) {
     primary_count: document.querySelectorAll('#experience [data-action="primary"]').length,
     recovery_count: document.querySelectorAll('[data-action="recovery"]').length
   }));
-  const expectedPrimary = phase === "before" ? 1 : 0;
+  const expectedPrimary = phase === "before" && testId !== "C2-T02" ? 1 : 0;
   const expectedRecovery = phase === "after" ? 1 : 0;
   const expectedDefault = phase === "before" ? spec.visual.default_before : 0;
   const ok = actual.test_id === testId && actual.phase === phase && actual.scene_body_count === 1 && actual.neutral_option_count === 2 && actual.default_option_count === expectedDefault && actual.prohibited_nodes === 0 && actual.heading === spec.heading && actual.primary_count === expectedPrimary && actual.recovery_count === expectedRecovery;
