@@ -19,7 +19,7 @@ function check(id, condition, observed) {
   checks.push({ id, status: condition ? "PASS" : "FAIL", observed });
 }
 
-const parent = git("rev-parse", process.env.CP31_AUDITED_TARGET || "HEAD^");
+const parent = git("rev-parse", process.env.CP31_AUDITED_TARGET || contract.official_cp30_commit);
 const parentTree = git("rev-parse", `${parent}^{tree}`);
 const mergeBase = git("merge-base", contract.protected_main, parent);
 const nameStatus = git("diff", "--name-status", `${contract.protected_main}..${parent}`)
