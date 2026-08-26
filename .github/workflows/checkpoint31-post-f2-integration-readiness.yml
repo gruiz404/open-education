@@ -36,14 +36,10 @@ jobs:
         working-directory: validation/checkpoint31/artifacts/evidence
         run: sha256sum -c SHA256SUMS.txt
 
-      - name: Package evidence
-        working-directory: validation/checkpoint31/artifacts
-        run: zip -qr OE-001-Checkpoint31-Post-F2-Integration-Readiness-Evidence.zip evidence
-
       - name: Upload evidence
         uses: actions/upload-artifact@v4
         with:
           name: OE-001-Checkpoint31-Post-F2-Integration-Readiness-Evidence
-          path: validation/checkpoint31/artifacts/OE-001-Checkpoint31-Post-F2-Integration-Readiness-Evidence.zip
+          path: validation/checkpoint31/artifacts/evidence
           if-no-files-found: error
           retention-days: 90
