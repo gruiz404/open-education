@@ -1,0 +1,9 @@
+{
+  "name": "open-education-checkpoint33",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "audit": "node scripts/audit-pr-preparation.mjs"
+  }
+}

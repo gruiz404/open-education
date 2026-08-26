@@ -1,0 +1,61 @@
+{
+  "schema": "open-education.checkpoint33.pr-preparation.v1",
+  "checkpoint": 33,
+  "gate": "PASS_CONTROLLED_PR_PREPARATION",
+  "criterion": "EXACT_CP32_CANDIDATE_ADDITIVE_DELTA_REGRESSION_EVIDENCE_ROLLBACK_READY",
+  "next_gate": "ENABLE_CONTROLLED_PULL_REQUEST_OPENING_REVIEW",
+  "repository": "gruiz404/open-education",
+  "base_branch": "main",
+  "head_branch": "checkpoint-32-full-pre-merge-regression",
+  "protected_main": "72e4d3410b74f9de4252c93f484304339d71cf1b",
+  "official_cp32_commit": "42c61ad7fbe7ec8caf14e1ff0942fa3b4249bbf6",
+  "official_cp32_tree": "2f3aeef8111e8478943ba79e90d73195e29038cf",
+  "cp32_run": {
+    "id": 33005538739,
+    "url": "https://github.com/gruiz404/open-education/actions/runs/33005538739",
+    "conclusion": "success",
+    "jobs": 6,
+    "artifact_id": 9620398873,
+    "artifact_digest": "sha256:059aada69d2d4c3064104f3dda56a4ff98d2f9da93383ed34869b100f4f18905",
+    "gate": "PASS_FULL_PRE_MERGE_REGRESSION"
+  },
+  "expected_candidate_delta": {
+    "commits": 16,
+    "files": 100,
+    "insertions": 8222,
+    "deletions": 0,
+    "added": 100,
+    "modified": 0,
+    "deleted": 0,
+    "workflows": 8,
+    "validation_files": 92,
+    "allowed_prefixes": [".github/workflows/checkpoint", "validation/checkpoint"]
+  },
+  "allowed_cp33_prefixes": [".github/workflows/checkpoint33-", "validation/checkpoint33/"],
+  "proposed_pull_request": {
+    "title": "Integrate OE-001 F2 validation chain (CP25-CP32)",
+    "base": "main",
+    "head": "checkpoint-32-full-pre-merge-regression",
+    "head_sha": "42c61ad7fbe7ec8caf14e1ff0942fa3b4249bbf6",
+    "draft_only": true
+  },
+  "historical_branches_to_retain": [
+    "checkpoint-25-browser-validation",
+    "checkpoint-26-f2-wave1",
+    "checkpoint-27-f2-wave2",
+    "checkpoint-28-f2-wave3",
+    "checkpoint-29-f2-wave4",
+    "checkpoint-30-f2-consolidated-closure",
+    "checkpoint-31-post-f2-integration-readiness",
+    "checkpoint-32-full-pre-merge-regression"
+  ],
+  "prohibited_actions": [
+    "OPEN_PULL_REQUEST",
+    "MERGE_TO_MAIN",
+    "MODIFY_GITHUB_PAGES",
+    "MODIFY_RELEASED_BASELINES",
+    "PUBLISH_RELEASE",
+    "ENABLE_CYCLE_4",
+    "DELETE_HISTORICAL_BRANCHES"
+  ]
+}

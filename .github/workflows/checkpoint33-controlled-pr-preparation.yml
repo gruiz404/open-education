@@ -1,0 +1,42 @@
+name: Checkpoint 33 Controlled Pull Request Preparation
+
+on:
+  push:
+    branches:
+      - checkpoint-33-controlled-pr-preparation
+
+permissions:
+  contents: read
+
+jobs:
+  prepare-and-audit:
+    name: controlled-pr-preparation-audit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated preparation branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate accumulated contracts
+        run: |
+          for checkpoint in 25 26 27 28 29 30 31 32 33; do
+            (cd "validation/checkpoint${checkpoint}" && npm test)
+          done
+      - name: Build and audit controlled PR dossier
+        working-directory: validation/checkpoint33
+        run: npm run audit
+      - name: Verify dossier manifest
+        working-directory: validation/checkpoint33/artifacts/evidence
+        run: sha256sum -c SHA256SUMS.txt
+      - name: Upload CP33 preparation evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint33-Controlled-PR-Preparation-Evidence
+          path: validation/checkpoint33/artifacts/evidence
+          if-no-files-found: error
+          retention-days: 90
