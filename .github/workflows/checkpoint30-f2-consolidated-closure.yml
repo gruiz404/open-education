@@ -1,0 +1,49 @@
+name: Checkpoint 30 F2 Consolidated Closure
+
+on:
+  push:
+    branches:
+      - checkpoint-30-f2-consolidated-closure
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  f2-consolidated-closure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: validation/checkpoint30
+    steps:
+      - name: Checkout isolated closure branch
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify immutable closure contract
+        run: npm test
+
+      - name: Retrieve four official wave artifacts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run sources:download
+
+      - name: Audit the 19-case F2 closure
+        run: npm run closure:audit
+
+      - name: Verify closure evidence manifest
+        run: cd closure-results && sha256sum -c SHA256SUMS.txt
+
+      - name: Upload Checkpoint 30 closure evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint30-F2-Consolidated-Closure-Evidence
+          path: validation/checkpoint30/closure-results
+          if-no-files-found: error
+          retention-days: 30
