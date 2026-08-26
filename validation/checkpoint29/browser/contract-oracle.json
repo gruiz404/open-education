@@ -1,0 +1,36 @@
+{
+  "schema_version": "oe-irp-f2-w4-oracle-0.1",
+  "checkpoint": 29,
+  "wave": "W4",
+  "title": "Frontera del Ciclo 4",
+  "source": "CP23 · matriz F2 · selección W4 aprobada",
+  "cases": {
+    "C2-T09": {
+      "cycle": 2,
+      "heading": "Continuar la exploración en el Ciclo 2",
+      "primary_action": "Ejecutar intento técnico controlado",
+      "recovery_action": "Continuar escena autorizada",
+      "events": ["UNAUTHORIZED_COMPONENT_DETECTED", "COMPONENT_MOUNT_BLOCKED", "LIMIT_RECORDED"],
+      "requested_component": "prediction_prompt",
+      "allowed_components": ["observation_table", "context_note"],
+      "recovery_contract": "C2_AVAILABLE_WITHOUT_FORCED_ROUTE"
+    },
+    "C3-T04": {
+      "cycle": 3,
+      "heading": "Mantener la relación provisional en el Ciclo 3",
+      "primary_action": "Ejecutar intento técnico controlado",
+      "recovery_action": "Continuar escena autorizada",
+      "events": ["UNAUTHORIZED_COMPONENT_DETECTED", "COMPONENT_MOUNT_BLOCKED", "LIMIT_RECORDED"],
+      "requested_component": "prediction_prompt",
+      "allowed_components": ["observation_table", "context_note"],
+      "recovery_contract": "C3_AVAILABLE_WITHOUT_PROMOTION"
+    }
+  },
+  "common_prohibitions": [
+    "No montar una consigna de predicción",
+    "No mostrar placeholder, pista ni sustituto",
+    "No mostrar control de contraste o evaluación",
+    "No promover al Ciclo 4",
+    "No certificar comprensión, logro o validez"
+  ]
+}
