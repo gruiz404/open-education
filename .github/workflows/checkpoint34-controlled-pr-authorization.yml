@@ -20,10 +20,12 @@ jobs:
         with:
           node-version: "22"
       - name: Fetch live pull-request state without mutation
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p validation/checkpoint34/artifacts/input
           curl --fail --silent --show-error \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Authorization: Bearer $GH_TOKEN" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pulls?state=all&per_page=100" \
             > validation/checkpoint34/artifacts/input/live-pr-state.json
