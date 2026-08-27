@@ -1,0 +1,1270 @@
+{
+  "schema_version": "oe-irp-f2-browser-golden-0.1",
+  "checkpoint_source": 24,
+  "generated_for_checkpoint": 25,
+  "provenance": "Checkpoint 24 deterministic evidence; 3/3 pilots and 42/42 external audit checks PASS",
+  "pilots": {
+    "C1-T03": {
+      "states": {
+        "initial": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "test_id": "C1-T03",
+          "phase": "before",
+          "content": {
+            "filter": null,
+            "visible_record_ids": [
+              "R01",
+              "R02",
+              "R03",
+              "R04",
+              "R05",
+              "R06"
+            ],
+            "records": [
+              {
+                "record_id": "R01",
+                "label": "Caso 1",
+                "group": "A",
+                "value": 12,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R01"
+                ]
+              },
+              {
+                "record_id": "R02",
+                "label": "Caso 2",
+                "group": "B",
+                "value": 18,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R02"
+                ]
+              },
+              {
+                "record_id": "R03",
+                "label": "Caso 3",
+                "group": "A",
+                "value": 9,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R03"
+                ]
+              },
+              {
+                "record_id": "R04",
+                "label": "Caso 4",
+                "group": "B",
+                "value": 15,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R04"
+                ]
+              },
+              {
+                "record_id": "R05",
+                "label": "Caso 5",
+                "group": "A",
+                "value": 21,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R05"
+                ]
+              },
+              {
+                "record_id": "R06",
+                "label": "Caso 6",
+                "group": "B",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R06"
+                ]
+              }
+            ]
+          },
+          "history_refs": [],
+          "technical_status": "READY",
+          "state_hash_scope": "content",
+          "state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72"
+        },
+        "after": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "test_id": "C1-T03",
+          "phase": "after",
+          "content": {
+            "filter": {
+              "field": "group",
+              "operator": "equals",
+              "value": "A"
+            },
+            "visible_record_ids": [
+              "R01",
+              "R03",
+              "R05"
+            ],
+            "records": [
+              {
+                "record_id": "R01",
+                "label": "Caso 1",
+                "group": "A",
+                "value": 12,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R01"
+                ]
+              },
+              {
+                "record_id": "R02",
+                "label": "Caso 2",
+                "group": "B",
+                "value": 18,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R02"
+                ]
+              },
+              {
+                "record_id": "R03",
+                "label": "Caso 3",
+                "group": "A",
+                "value": 9,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R03"
+                ]
+              },
+              {
+                "record_id": "R04",
+                "label": "Caso 4",
+                "group": "B",
+                "value": 15,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R04"
+                ]
+              },
+              {
+                "record_id": "R05",
+                "label": "Caso 5",
+                "group": "A",
+                "value": 21,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R05"
+                ]
+              },
+              {
+                "record_id": "R06",
+                "label": "Caso 6",
+                "group": "B",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R06"
+                ]
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C1-T03-OE001-F2-C1-T03-S01#1"
+          ],
+          "technical_status": "FILTER_ACTIVE",
+          "state_hash_scope": "content",
+          "state_hash": "d075b1c6f4ca538ab4926e1e5436565b3030564d9347ae23ba4893445ddeefce"
+        },
+        "recovery": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "test_id": "C1-T03",
+          "phase": "recovery",
+          "content": {
+            "filter": null,
+            "visible_record_ids": [
+              "R01",
+              "R02",
+              "R03",
+              "R04",
+              "R05",
+              "R06"
+            ],
+            "records": [
+              {
+                "record_id": "R01",
+                "label": "Caso 1",
+                "group": "A",
+                "value": 12,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R01"
+                ]
+              },
+              {
+                "record_id": "R02",
+                "label": "Caso 2",
+                "group": "B",
+                "value": 18,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R02"
+                ]
+              },
+              {
+                "record_id": "R03",
+                "label": "Caso 3",
+                "group": "A",
+                "value": 9,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R03"
+                ]
+              },
+              {
+                "record_id": "R04",
+                "label": "Caso 4",
+                "group": "B",
+                "value": 15,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R04"
+                ]
+              },
+              {
+                "record_id": "R05",
+                "label": "Caso 5",
+                "group": "A",
+                "value": 21,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R05"
+                ]
+              },
+              {
+                "record_id": "R06",
+                "label": "Caso 6",
+                "group": "B",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R06"
+                ]
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C1-T03-OE001-F2-C1-T03-S01#1",
+            "RUN-C1-T03-OE001-F2-C1-T03-S01#2",
+            "RUN-C1-T03-OE001-F2-C1-T03-S01#3"
+          ],
+          "technical_status": "RESTORED",
+          "state_hash_scope": "content",
+          "state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72"
+        }
+      },
+      "dom": {
+        "before": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <div class=\"scene-heading\"><div><p class=\"eyebrow\">Exploración del conjunto</p><h2 id=\"scene-title\">Filtrar sin perder información</h2></div><span class=\"count\" aria-label=\"Cantidad visible\">6 de 6</span></div>\n      <div class=\"toolbar\" role=\"group\" aria-label=\"Controles del conjunto\">\n        <button type=\"button\" data-action=\"filter-a\" aria-pressed=\"false\">Grupo A</button>\n        <button type=\"button\" data-action=\"clear-filter\" disabled>Restablecer</button>\n        <span class=\"criterion\" data-filter-state>Sin filtro activo</span>\n      </div>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R01\">\n      <td>Caso 1</td><td>A</td><td>12</td>\n    </tr>\n    <tr data-record-id=\"R02\">\n      <td>Caso 2</td><td>B</td><td>18</td>\n    </tr>\n    <tr data-record-id=\"R03\">\n      <td>Caso 3</td><td>A</td><td>9</td>\n    </tr>\n    <tr data-record-id=\"R04\">\n      <td>Caso 4</td><td>B</td><td>15</td>\n    </tr>\n    <tr data-record-id=\"R05\">\n      <td>Caso 5</td><td>A</td><td>21</td>\n    </tr>\n    <tr data-record-id=\"R06\">\n      <td>Caso 6</td><td>B</td><td>11</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">El filtro cambia la vista; el conjunto de origen permanece íntegro.</p>\n    </section>\n",
+        "after": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <div class=\"scene-heading\"><div><p class=\"eyebrow\">Exploración del conjunto</p><h2 id=\"scene-title\">Filtrar sin perder información</h2></div><span class=\"count\" aria-label=\"Cantidad visible\">3 de 6</span></div>\n      <div class=\"toolbar\" role=\"group\" aria-label=\"Controles del conjunto\">\n        <button type=\"button\" data-action=\"filter-a\" aria-pressed=\"true\">Grupo A</button>\n        <button type=\"button\" data-action=\"clear-filter\" >Restablecer</button>\n        <span class=\"criterion\" data-filter-state>Filtro activo: Grupo A</span>\n      </div>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R01\">\n      <td>Caso 1</td><td>A</td><td>12</td>\n    </tr>\n    <tr data-record-id=\"R03\">\n      <td>Caso 3</td><td>A</td><td>9</td>\n    </tr>\n    <tr data-record-id=\"R05\">\n      <td>Caso 5</td><td>A</td><td>21</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">El filtro cambia la vista; el conjunto de origen permanece íntegro.</p>\n    </section>\n",
+        "recovery": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <div class=\"scene-heading\"><div><p class=\"eyebrow\">Exploración del conjunto</p><h2 id=\"scene-title\">Filtrar sin perder información</h2></div><span class=\"count\" aria-label=\"Cantidad visible\">6 de 6</span></div>\n      <div class=\"toolbar\" role=\"group\" aria-label=\"Controles del conjunto\">\n        <button type=\"button\" data-action=\"filter-a\" aria-pressed=\"false\">Grupo A</button>\n        <button type=\"button\" data-action=\"clear-filter\" disabled>Restablecer</button>\n        <span class=\"criterion\" data-filter-state>Sin filtro activo</span>\n      </div>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R01\">\n      <td>Caso 1</td><td>A</td><td>12</td>\n    </tr>\n    <tr data-record-id=\"R02\">\n      <td>Caso 2</td><td>B</td><td>18</td>\n    </tr>\n    <tr data-record-id=\"R03\">\n      <td>Caso 3</td><td>A</td><td>9</td>\n    </tr>\n    <tr data-record-id=\"R04\">\n      <td>Caso 4</td><td>B</td><td>15</td>\n    </tr>\n    <tr data-record-id=\"R05\">\n      <td>Caso 5</td><td>A</td><td>21</td>\n    </tr>\n    <tr data-record-id=\"R06\">\n      <td>Caso 6</td><td>B</td><td>11</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">El filtro cambia la vista; el conjunto de origen permanece íntegro.</p>\n    </section>\n"
+      },
+      "aria": {
+        "before": {
+          "role": "main",
+          "name": "Experiencia C1-T03",
+          "phase": "before",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Filtrar sin perder información"
+            },
+            {
+              "role": "button",
+              "name": "Grupo A",
+              "pressed": false
+            },
+            {
+              "role": "button",
+              "name": "Restablecer",
+              "disabled": true
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 6
+            }
+          ]
+        },
+        "after": {
+          "role": "main",
+          "name": "Experiencia C1-T03",
+          "phase": "after",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Filtrar sin perder información"
+            },
+            {
+              "role": "button",
+              "name": "Grupo A",
+              "pressed": true
+            },
+            {
+              "role": "button",
+              "name": "Restablecer",
+              "disabled": false
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 3
+            }
+          ]
+        },
+        "recovery": {
+          "role": "main",
+          "name": "Experiencia C1-T03",
+          "phase": "recovery",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Filtrar sin perder información"
+            },
+            {
+              "role": "button",
+              "name": "Grupo A",
+              "pressed": false
+            },
+            {
+              "role": "button",
+              "name": "Restablecer",
+              "disabled": true
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 6
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "sequence": 1,
+          "monotonic_ms": 100,
+          "test_id": "C1-T03",
+          "cycle": 1,
+          "actor": "READER",
+          "event_type": "FILTER_APPLIED",
+          "input_payload": {
+            "group": "A"
+          },
+          "before_state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72",
+          "after_state_hash": "d075b1c6f4ca538ab4926e1e5436565b3030564d9347ae23ba4893445ddeefce",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R01",
+            "record:R02",
+            "record:R03",
+            "record:R04",
+            "record:R05",
+            "record:R06"
+          ],
+          "visible_criteria": {
+            "filter_label": "Grupo A",
+            "visible_count": 3
+          },
+          "reversible": true,
+          "undo_ref": "snapshot:initial",
+          "policy_decision_ref": "B2:C1-T03:ALLOW",
+          "ui_snapshot_ref": "screenshots/after.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "sequence": 2,
+          "monotonic_ms": 200,
+          "test_id": "C1-T03",
+          "cycle": 1,
+          "actor": "READER",
+          "event_type": "FILTER_REVERTED",
+          "input_payload": {
+            "action": "clear_filter"
+          },
+          "before_state_hash": "d075b1c6f4ca538ab4926e1e5436565b3030564d9347ae23ba4893445ddeefce",
+          "after_state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R01",
+            "record:R02",
+            "record:R03",
+            "record:R04",
+            "record:R05",
+            "record:R06"
+          ],
+          "visible_criteria": {
+            "filter_label": null,
+            "visible_count": 6
+          },
+          "reversible": true,
+          "undo_ref": "snapshot:initial",
+          "policy_decision_ref": "B2:C1-T03:ALLOW",
+          "ui_snapshot_ref": "screenshots/recovery.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C1-T03-OE001-F2-C1-T03-S01",
+          "sequence": 3,
+          "monotonic_ms": 300,
+          "test_id": "C1-T03",
+          "cycle": 1,
+          "actor": "SYSTEM",
+          "event_type": "SNAPSHOT_CAPTURED",
+          "input_payload": {
+            "label": "recovery"
+          },
+          "before_state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72",
+          "after_state_hash": "55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R01",
+            "record:R02",
+            "record:R03",
+            "record:R04",
+            "record:R05",
+            "record:R06"
+          ],
+          "visible_criteria": {
+            "restored_initial_hash": true
+          },
+          "reversible": false,
+          "undo_ref": "snapshot:initial",
+          "policy_decision_ref": "B2:C1-T03:ALLOW",
+          "ui_snapshot_ref": "screenshots/recovery.png"
+        }
+      ],
+      "source_audit": {
+        "schema_version": "oe-irp-f2-audit-0.1",
+        "auditor": "IRP-F2-EXTERNAL-AUDITOR",
+        "auditor_version": "0.1.0",
+        "test_id": "C1-T03",
+        "status": "PASS",
+        "checks": [
+          {
+            "check_id": "BUNDLE_REQUIRED_FILES",
+            "status": "PASS",
+            "detail": "Todos presentes"
+          },
+          {
+            "check_id": "BUNDLE_PARSE",
+            "status": "PASS",
+            "detail": "JSON, NDJSON y DOM legibles"
+          },
+          {
+            "check_id": "STATE_HASHES",
+            "status": "PASS",
+            "detail": "OK · OK · OK · OK"
+          },
+          {
+            "check_id": "ISOLATION",
+            "status": "PASS",
+            "detail": "Sin red externa, telemetría ni oráculo en la aplicación"
+          },
+          {
+            "check_id": "HASH_SCOPE",
+            "status": "PASS",
+            "detail": "scope=content"
+          },
+          {
+            "check_id": "EVENT_SCHEMA_17",
+            "status": "PASS",
+            "detail": "3 eventos; 17 campos requeridos"
+          },
+          {
+            "check_id": "EVENT_SEQUENCE",
+            "status": "PASS",
+            "detail": "1:100, 2:200, 3:300"
+          },
+          {
+            "check_id": "EVENT_IDENTITY",
+            "status": "PASS",
+            "detail": "test_id=C1-T03"
+          },
+          {
+            "check_id": "EVENT_PROVENANCE",
+            "status": "PASS",
+            "detail": "Procedencia presente en todos los eventos"
+          },
+          {
+            "check_id": "C1_EVENT_ORACLE",
+            "status": "PASS",
+            "detail": "FILTER_APPLIED > FILTER_REVERTED > SNAPSHOT_CAPTURED"
+          },
+          {
+            "check_id": "C1_REVERSIBILITY",
+            "status": "PASS",
+            "detail": "initial=55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72; final=55a8e8c8cafc341b378de9b8a9283eaef7a1230f07230015c3ab5f575aef1c72"
+          },
+          {
+            "check_id": "C1_SET_INTEGRITY",
+            "status": "PASS",
+            "detail": "6 record_ids preservados"
+          },
+          {
+            "check_id": "C1_APPEND_ONLY",
+            "status": "PASS",
+            "detail": "3 referencias conservadas"
+          },
+          {
+            "check_id": "PNG_CAPTURES",
+            "status": "PASS",
+            "detail": "3/3 PNG válidos"
+          }
+        ],
+        "limits": [
+          "La corrida valida coincidencia técnica con el contrato; no certifica comprensión ni logro cognitivo.",
+          "Las capturas provienen del renderizador determinista compartido; la validación en navegador real queda pendiente."
+        ]
+      }
+    },
+    "C2-T02": {
+      "states": {
+        "initial": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "test_id": "C2-T02",
+          "phase": "before",
+          "content": {
+            "default_option": "view_B",
+            "reader_choice": null,
+            "interaction_enabled": false,
+            "salience_violation": true,
+            "options": [
+              {
+                "option_id": "view_A",
+                "label": "Vista A",
+                "salience_token": "neutral"
+              },
+              {
+                "option_id": "view_B",
+                "label": "Vista B",
+                "salience_token": "highlighted"
+              }
+            ]
+          },
+          "history_refs": [],
+          "technical_status": "READY",
+          "state_hash_scope": "content",
+          "state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720"
+        },
+        "after": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "test_id": "C2-T02",
+          "phase": "after",
+          "content": {
+            "default_option": "view_B",
+            "reader_choice": null,
+            "interaction_enabled": false,
+            "salience_violation": true,
+            "options": [
+              {
+                "option_id": "view_A",
+                "label": "Vista A",
+                "salience_token": "neutral"
+              },
+              {
+                "option_id": "view_B",
+                "label": "Vista B",
+                "salience_token": "highlighted"
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C2-T02-OE001-F2-C2-T02-S01#1",
+            "RUN-C2-T02-OE001-F2-C2-T02-S01#2"
+          ],
+          "technical_status": "BLOCKED_FOR_NEUTRALITY",
+          "state_hash_scope": "content",
+          "state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720"
+        },
+        "recovery": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "test_id": "C2-T02",
+          "phase": "recovery",
+          "content": {
+            "default_option": null,
+            "reader_choice": null,
+            "interaction_enabled": true,
+            "salience_violation": false,
+            "options": [
+              {
+                "option_id": "view_A",
+                "label": "Vista A",
+                "salience_token": "neutral"
+              },
+              {
+                "option_id": "view_B",
+                "label": "Vista B",
+                "salience_token": "neutral"
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C2-T02-OE001-F2-C2-T02-S01#1",
+            "RUN-C2-T02-OE001-F2-C2-T02-S01#2",
+            "RUN-C2-T02-OE001-F2-C2-T02-S01#3"
+          ],
+          "technical_status": "NEUTRALIZED",
+          "state_hash_scope": "content",
+          "state_hash": "9b99f2ecaf8e20046e235c81123ee9536aee1c16f0ceda2391ba27f021712bc1"
+        }
+      },
+      "dom": {
+        "before": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Comparación neutral</p><h2 id=\"scene-title\">Elegí una forma de observar</h2>\n      <div class=\"notice\" role=\"status\">Interacción pausada mientras se restablece la equivalencia visual.</div>\n      <div class=\"option-grid\" role=\"group\" aria-label=\"Vistas disponibles\"><button type=\"button\" class=\"option neutral\" data-option-id=\"view_A\" aria-pressed=\"false\" disabled>Vista A</button><button type=\"button\" class=\"option injected-salience\" data-option-id=\"view_B\" aria-pressed=\"false\" disabled>Vista B</button></div>\n      <p class=\"context-note\">La interfaz no interpreta una opción destacada como elección del lector.</p>\n    </section>\n",
+        "after": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Comparación neutral</p><h2 id=\"scene-title\">Elegí una forma de observar</h2>\n      <div class=\"notice\" role=\"status\">Interacción pausada mientras se restablece la equivalencia visual.</div>\n      <div class=\"option-grid\" role=\"group\" aria-label=\"Vistas disponibles\"><button type=\"button\" class=\"option neutral\" data-option-id=\"view_A\" aria-pressed=\"false\" disabled>Vista A</button><button type=\"button\" class=\"option injected-salience\" data-option-id=\"view_B\" aria-pressed=\"false\" disabled>Vista B</button></div>\n      <p class=\"context-note\">La interfaz no interpreta una opción destacada como elección del lector.</p>\n    </section>\n",
+        "recovery": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Comparación neutral</p><h2 id=\"scene-title\">Elegí una forma de observar</h2>\n      <div class=\"notice neutral-notice\" role=\"status\">Opciones equivalentes; ninguna está seleccionada.</div>\n      <div class=\"option-grid\" role=\"group\" aria-label=\"Vistas disponibles\"><button type=\"button\" class=\"option neutral\" data-option-id=\"view_A\" aria-pressed=\"false\" >Vista A</button><button type=\"button\" class=\"option neutral\" data-option-id=\"view_B\" aria-pressed=\"false\" >Vista B</button></div>\n      <p class=\"context-note\">La interfaz no interpreta una opción destacada como elección del lector.</p>\n    </section>\n"
+      },
+      "aria": {
+        "before": {
+          "role": "main",
+          "name": "Experiencia C2-T02",
+          "phase": "before",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Elegí una forma de observar"
+            },
+            {
+              "role": "button",
+              "name": "Vista A",
+              "pressed": false,
+              "disabled": true
+            },
+            {
+              "role": "button",
+              "name": "Vista B",
+              "pressed": false,
+              "disabled": true
+            }
+          ]
+        },
+        "after": {
+          "role": "main",
+          "name": "Experiencia C2-T02",
+          "phase": "after",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Elegí una forma de observar"
+            },
+            {
+              "role": "button",
+              "name": "Vista A",
+              "pressed": false,
+              "disabled": true
+            },
+            {
+              "role": "button",
+              "name": "Vista B",
+              "pressed": false,
+              "disabled": true
+            }
+          ]
+        },
+        "recovery": {
+          "role": "main",
+          "name": "Experiencia C2-T02",
+          "phase": "recovery",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Elegí una forma de observar"
+            },
+            {
+              "role": "button",
+              "name": "Vista A",
+              "pressed": false,
+              "disabled": false
+            },
+            {
+              "role": "button",
+              "name": "Vista B",
+              "pressed": false,
+              "disabled": false
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "sequence": 1,
+          "monotonic_ms": 100,
+          "test_id": "C2-T02",
+          "cycle": 2,
+          "actor": "POLICY",
+          "event_type": "SALIENCE_VIOLATION_DETECTED",
+          "input_payload": {
+            "default_option": "view_B"
+          },
+          "before_state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720",
+          "after_state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720",
+          "provenance": [
+            "fixture:OE001-F2"
+          ],
+          "visible_criteria": {
+            "options_equivalent": false,
+            "interaction_enabled": false
+          },
+          "reversible": true,
+          "undo_ref": "remount:neutral",
+          "policy_decision_ref": "B2:C2-T02:BLOCK",
+          "ui_snapshot_ref": "screenshots/after.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "sequence": 2,
+          "monotonic_ms": 200,
+          "test_id": "C2-T02",
+          "cycle": 2,
+          "actor": "SYSTEM",
+          "event_type": "INTERACTION_BLOCKED",
+          "input_payload": {
+            "reason": "default_salience"
+          },
+          "before_state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720",
+          "after_state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720",
+          "provenance": [
+            "fixture:OE001-F2"
+          ],
+          "visible_criteria": {
+            "reader_choice": "NONE",
+            "interaction_enabled": false
+          },
+          "reversible": true,
+          "undo_ref": "remount:neutral",
+          "policy_decision_ref": "B2:C2-T02:BLOCK",
+          "ui_snapshot_ref": "screenshots/after.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C2-T02-OE001-F2-C2-T02-S01",
+          "sequence": 3,
+          "monotonic_ms": 300,
+          "test_id": "C2-T02",
+          "cycle": 2,
+          "actor": "SYSTEM",
+          "event_type": "OPTIONS_NEUTRALIZED",
+          "input_payload": {
+            "remount": "neutral"
+          },
+          "before_state_hash": "9a5cae427bbf03d432cf6a10ff1bd60d46fdc2ba855d5c410bba5aa553043720",
+          "after_state_hash": "9b99f2ecaf8e20046e235c81123ee9536aee1c16f0ceda2391ba27f021712bc1",
+          "provenance": [
+            "fixture:OE001-F2"
+          ],
+          "visible_criteria": {
+            "options_equivalent": true,
+            "selected_option": null,
+            "interaction_enabled": true
+          },
+          "reversible": false,
+          "undo_ref": "remount:neutral",
+          "policy_decision_ref": "B2:C2-T02:BLOCK",
+          "ui_snapshot_ref": "screenshots/recovery.png"
+        }
+      ],
+      "source_audit": {
+        "schema_version": "oe-irp-f2-audit-0.1",
+        "auditor": "IRP-F2-EXTERNAL-AUDITOR",
+        "auditor_version": "0.1.0",
+        "test_id": "C2-T02",
+        "status": "PASS",
+        "checks": [
+          {
+            "check_id": "BUNDLE_REQUIRED_FILES",
+            "status": "PASS",
+            "detail": "Todos presentes"
+          },
+          {
+            "check_id": "BUNDLE_PARSE",
+            "status": "PASS",
+            "detail": "JSON, NDJSON y DOM legibles"
+          },
+          {
+            "check_id": "STATE_HASHES",
+            "status": "PASS",
+            "detail": "OK · OK · OK · OK"
+          },
+          {
+            "check_id": "ISOLATION",
+            "status": "PASS",
+            "detail": "Sin red externa, telemetría ni oráculo en la aplicación"
+          },
+          {
+            "check_id": "HASH_SCOPE",
+            "status": "PASS",
+            "detail": "scope=content"
+          },
+          {
+            "check_id": "EVENT_SCHEMA_17",
+            "status": "PASS",
+            "detail": "3 eventos; 17 campos requeridos"
+          },
+          {
+            "check_id": "EVENT_SEQUENCE",
+            "status": "PASS",
+            "detail": "1:100, 2:200, 3:300"
+          },
+          {
+            "check_id": "EVENT_IDENTITY",
+            "status": "PASS",
+            "detail": "test_id=C2-T02"
+          },
+          {
+            "check_id": "EVENT_PROVENANCE",
+            "status": "PASS",
+            "detail": "Procedencia presente en todos los eventos"
+          },
+          {
+            "check_id": "C2_EVENT_ORACLE",
+            "status": "PASS",
+            "detail": "SALIENCE_VIOLATION_DETECTED > INTERACTION_BLOCKED > OPTIONS_NEUTRALIZED"
+          },
+          {
+            "check_id": "C2_NO_INFERRED_CHOICE",
+            "status": "PASS",
+            "detail": "reader_choice=NONE"
+          },
+          {
+            "check_id": "C2_VISUAL_EQUIVALENCE",
+            "status": "PASS",
+            "detail": "Métricas equivalentes y ninguna selección"
+          },
+          {
+            "check_id": "C2_RECOVERY",
+            "status": "PASS",
+            "detail": "Default eliminado e interacción habilitada"
+          },
+          {
+            "check_id": "PNG_CAPTURES",
+            "status": "PASS",
+            "detail": "3/3 PNG válidos"
+          }
+        ],
+        "limits": [
+          "La corrida valida coincidencia técnica con el contrato; no certifica comprensión ni logro cognitivo.",
+          "Las capturas provienen del renderizador determinista compartido; la validación en navegador real queda pendiente."
+        ]
+      }
+    },
+    "C3-T04": {
+      "states": {
+        "initial": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "test_id": "C3-T04",
+          "phase": "before",
+          "content": {
+            "cycle4_enabled": false,
+            "hypothesis_status": "UNEVALUATED",
+            "mounted_components": [
+              "observation_table",
+              "context_note"
+            ],
+            "limit_recorded": false,
+            "records": [
+              {
+                "record_id": "R21",
+                "label": "Observación alfa",
+                "group": "N",
+                "value": 8,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R21"
+                ]
+              },
+              {
+                "record_id": "R22",
+                "label": "Observación beta",
+                "group": "N",
+                "value": 13,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R22"
+                ]
+              },
+              {
+                "record_id": "R23",
+                "label": "Observación gamma",
+                "group": "N",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R23"
+                ]
+              }
+            ]
+          },
+          "history_refs": [],
+          "technical_status": "READY",
+          "state_hash_scope": "content",
+          "state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd"
+        },
+        "after": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "test_id": "C3-T04",
+          "phase": "after",
+          "content": {
+            "cycle4_enabled": false,
+            "hypothesis_status": "UNEVALUATED",
+            "mounted_components": [
+              "observation_table",
+              "context_note"
+            ],
+            "limit_recorded": true,
+            "records": [
+              {
+                "record_id": "R21",
+                "label": "Observación alfa",
+                "group": "N",
+                "value": 8,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R21"
+                ]
+              },
+              {
+                "record_id": "R22",
+                "label": "Observación beta",
+                "group": "N",
+                "value": 13,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R22"
+                ]
+              },
+              {
+                "record_id": "R23",
+                "label": "Observación gamma",
+                "group": "N",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R23"
+                ]
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#1",
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#2",
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#3"
+          ],
+          "technical_status": "CYCLE_4_BOUNDARY_ENFORCED",
+          "state_hash_scope": "content",
+          "state_hash": "dd4a323d19dd2d74754b359055e6f735be8d0d45a79adabd5f013b18412192c0"
+        },
+        "recovery": {
+          "schema_version": "oe-irp-f2-state-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "test_id": "C3-T04",
+          "phase": "recovery",
+          "content": {
+            "cycle4_enabled": false,
+            "hypothesis_status": "UNEVALUATED",
+            "mounted_components": [
+              "observation_table",
+              "context_note"
+            ],
+            "limit_recorded": true,
+            "records": [
+              {
+                "record_id": "R21",
+                "label": "Observación alfa",
+                "group": "N",
+                "value": 8,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R21"
+                ]
+              },
+              {
+                "record_id": "R22",
+                "label": "Observación beta",
+                "group": "N",
+                "value": 13,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R22"
+                ]
+              },
+              {
+                "record_id": "R23",
+                "label": "Observación gamma",
+                "group": "N",
+                "value": 11,
+                "provenance": [
+                  "fixture:OE001-F2",
+                  "record:R23"
+                ]
+              }
+            ]
+          },
+          "history_refs": [
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#1",
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#2",
+            "RUN-C3-T04-OE001-F2-C3-T04-S01#3"
+          ],
+          "technical_status": "C3_AVAILABLE_WITHOUT_PROMOTION",
+          "state_hash_scope": "content",
+          "state_hash": "dd4a323d19dd2d74754b359055e6f735be8d0d45a79adabd5f013b18412192c0"
+        }
+      },
+      "dom": {
+        "before": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Relaciones observables</p><h2 id=\"scene-title\">Revisar las observaciones disponibles</h2>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R21\">\n      <td>Observación alfa</td><td>N</td><td>8</td>\n    </tr>\n    <tr data-record-id=\"R22\">\n      <td>Observación beta</td><td>N</td><td>13</td>\n    </tr>\n    <tr data-record-id=\"R23\">\n      <td>Observación gamma</td><td>N</td><td>11</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">La escena conserva el alcance del Ciclo 3 y no promueve acciones adicionales.</p>\n    </section>\n",
+        "after": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Relaciones observables</p><h2 id=\"scene-title\">Revisar las observaciones disponibles</h2>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R21\">\n      <td>Observación alfa</td><td>N</td><td>8</td>\n    </tr>\n    <tr data-record-id=\"R22\">\n      <td>Observación beta</td><td>N</td><td>13</td>\n    </tr>\n    <tr data-record-id=\"R23\">\n      <td>Observación gamma</td><td>N</td><td>11</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">La escena conserva el alcance del Ciclo 3 y no promueve acciones adicionales.</p>\n    </section>\n",
+        "recovery": "\n    <section class=\"experience-card\" aria-labelledby=\"scene-title\">\n      <p class=\"eyebrow\">Relaciones observables</p><h2 id=\"scene-title\">Revisar las observaciones disponibles</h2>\n      <table aria-label=\"Conjunto de observaciones\"><thead><tr><th>Caso</th><th>Grupo</th><th>Valor</th></tr></thead><tbody>\n    <tr data-record-id=\"R21\">\n      <td>Observación alfa</td><td>N</td><td>8</td>\n    </tr>\n    <tr data-record-id=\"R22\">\n      <td>Observación beta</td><td>N</td><td>13</td>\n    </tr>\n    <tr data-record-id=\"R23\">\n      <td>Observación gamma</td><td>N</td><td>11</td>\n    </tr></tbody></table>\n      <p class=\"context-note\">La escena conserva el alcance del Ciclo 3 y no promueve acciones adicionales.</p>\n    </section>\n"
+      },
+      "aria": {
+        "before": {
+          "role": "main",
+          "name": "Experiencia C3-T04",
+          "phase": "before",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Revisar las observaciones disponibles"
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 3
+            }
+          ]
+        },
+        "after": {
+          "role": "main",
+          "name": "Experiencia C3-T04",
+          "phase": "after",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Revisar las observaciones disponibles"
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 3
+            }
+          ]
+        },
+        "recovery": {
+          "role": "main",
+          "name": "Experiencia C3-T04",
+          "phase": "recovery",
+          "children": [
+            {
+              "role": "heading",
+              "level": 2,
+              "name": "Revisar las observaciones disponibles"
+            },
+            {
+              "role": "table",
+              "name": "Conjunto de observaciones",
+              "row_count": 3
+            }
+          ]
+        }
+      },
+      "events": [
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "sequence": 1,
+          "monotonic_ms": 100,
+          "test_id": "C3-T04",
+          "cycle": 3,
+          "actor": "POLICY",
+          "event_type": "UNAUTHORIZED_COMPONENT_DETECTED",
+          "input_payload": {
+            "requested_component": "prediction_prompt",
+            "reserved_cycle": 4
+          },
+          "before_state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd",
+          "after_state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R21",
+            "record:R22",
+            "record:R23"
+          ],
+          "visible_criteria": {
+            "experience_component_present": false
+          },
+          "reversible": false,
+          "undo_ref": null,
+          "policy_decision_ref": "B2:C3-T04:BLOCK:C4",
+          "ui_snapshot_ref": "screenshots/after.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "sequence": 2,
+          "monotonic_ms": 200,
+          "test_id": "C3-T04",
+          "cycle": 3,
+          "actor": "SYSTEM",
+          "event_type": "COMPONENT_MOUNT_BLOCKED",
+          "input_payload": {
+            "component": "prediction_prompt"
+          },
+          "before_state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd",
+          "after_state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R21",
+            "record:R22",
+            "record:R23"
+          ],
+          "visible_criteria": {
+            "prompt_present": false,
+            "substitute_present": false,
+            "contrast_control_present": false
+          },
+          "reversible": false,
+          "undo_ref": null,
+          "policy_decision_ref": "B2:C3-T04:BLOCK:C4",
+          "ui_snapshot_ref": "screenshots/after.png"
+        },
+        {
+          "schema_version": "oe-irp-f2-event-0.1",
+          "run_id": "RUN-C3-T04-OE001-F2-C3-T04-S01",
+          "sequence": 3,
+          "monotonic_ms": 300,
+          "test_id": "C3-T04",
+          "cycle": 3,
+          "actor": "SYSTEM",
+          "event_type": "LIMIT_RECORDED",
+          "input_payload": {
+            "boundary": "CYCLE_4_DISABLED"
+          },
+          "before_state_hash": "60af6cbc95fbf9fcd1bdb6f3f4ba521e25c57b96eb3d5a4fde7b97c9cbe74bcd",
+          "after_state_hash": "dd4a323d19dd2d74754b359055e6f735be8d0d45a79adabd5f013b18412192c0",
+          "provenance": [
+            "fixture:OE001-F2",
+            "record:R21",
+            "record:R22",
+            "record:R23"
+          ],
+          "visible_criteria": {
+            "experience_available": true,
+            "promotion_performed": false
+          },
+          "reversible": false,
+          "undo_ref": null,
+          "policy_decision_ref": "B2:C3-T04:BLOCK:C4",
+          "ui_snapshot_ref": "screenshots/after.png"
+        }
+      ],
+      "source_audit": {
+        "schema_version": "oe-irp-f2-audit-0.1",
+        "auditor": "IRP-F2-EXTERNAL-AUDITOR",
+        "auditor_version": "0.1.0",
+        "test_id": "C3-T04",
+        "status": "PASS",
+        "checks": [
+          {
+            "check_id": "BUNDLE_REQUIRED_FILES",
+            "status": "PASS",
+            "detail": "Todos presentes"
+          },
+          {
+            "check_id": "BUNDLE_PARSE",
+            "status": "PASS",
+            "detail": "JSON, NDJSON y DOM legibles"
+          },
+          {
+            "check_id": "STATE_HASHES",
+            "status": "PASS",
+            "detail": "OK · OK · OK · OK"
+          },
+          {
+            "check_id": "ISOLATION",
+            "status": "PASS",
+            "detail": "Sin red externa, telemetría ni oráculo en la aplicación"
+          },
+          {
+            "check_id": "HASH_SCOPE",
+            "status": "PASS",
+            "detail": "scope=content"
+          },
+          {
+            "check_id": "EVENT_SCHEMA_17",
+            "status": "PASS",
+            "detail": "3 eventos; 17 campos requeridos"
+          },
+          {
+            "check_id": "EVENT_SEQUENCE",
+            "status": "PASS",
+            "detail": "1:100, 2:200, 3:300"
+          },
+          {
+            "check_id": "EVENT_IDENTITY",
+            "status": "PASS",
+            "detail": "test_id=C3-T04"
+          },
+          {
+            "check_id": "EVENT_PROVENANCE",
+            "status": "PASS",
+            "detail": "Procedencia presente en todos los eventos"
+          },
+          {
+            "check_id": "C3_EVENT_ORACLE",
+            "status": "PASS",
+            "detail": "UNAUTHORIZED_COMPONENT_DETECTED > COMPONENT_MOUNT_BLOCKED > LIMIT_RECORDED"
+          },
+          {
+            "check_id": "C3_COMPONENT_ABSENCE",
+            "status": "PASS",
+            "detail": "Componentes C4 ausentes del estado"
+          },
+          {
+            "check_id": "C3_DOM_ABSENCE",
+            "status": "PASS",
+            "detail": "Sin consigna, sustituto ni control reservado en el DOM de experiencia"
+          },
+          {
+            "check_id": "C3_STATE_BOUNDARY",
+            "status": "PASS",
+            "detail": "Ciclo 4 deshabilitado; hipótesis sin evaluación"
+          },
+          {
+            "check_id": "PNG_CAPTURES",
+            "status": "PASS",
+            "detail": "3/3 PNG válidos"
+          }
+        ],
+        "limits": [
+          "La corrida valida coincidencia técnica con el contrato; no certifica comprensión ni logro cognitivo.",
+          "Las capturas provienen del renderizador determinista compartido; la validación en navegador real queda pendiente."
+        ]
+      }
+    }
+  }
+}

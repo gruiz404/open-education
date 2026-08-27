@@ -1,0 +1,45 @@
+name: Checkpoint 31 Post-F2 Integration Readiness
+
+on:
+  push:
+    branches:
+      - checkpoint-31-post-f2-integration-readiness
+
+permissions:
+  contents: read
+
+jobs:
+  integration-readiness-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: validation/checkpoint31
+    steps:
+      - name: Checkout isolated audit branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate immutable contract
+        run: npm test
+
+      - name: Audit integration readiness
+        run: npm run audit
+
+      - name: Verify evidence manifest
+        working-directory: validation/checkpoint31/artifacts/evidence
+        run: sha256sum -c SHA256SUMS.txt
+
+      - name: Upload evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint31-Post-F2-Integration-Readiness-Evidence
+          path: validation/checkpoint31/artifacts/evidence
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,13 @@
+{
+  "name": "oe-001-irp-f2-wave4",
+  "version": "0.5.0-candidate",
+  "private": true,
+  "type": "module",
+  "description": "Checkpoint 29: validación Chromium de los dos contratos F2 de la ola W4.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "serve": "node runner/serve.mjs",
+    "browser:test": "node browser/run-browser-pilots.mjs",
+    "browser:audit": "node browser/audit-browser-results.mjs"
+  }
+}

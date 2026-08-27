@@ -1,0 +1,76 @@
+{
+  "schema_version": "oe-irp-f2-w2-oracle-0.1",
+  "checkpoint": 27,
+  "wave": "W2",
+  "title": "Neutralidad y comparación",
+  "source": "CP23 · matriz F2 · selección W2 aprobada",
+  "cases": {
+    "C1-T06": {
+      "cycle": 1,
+      "heading": "Elegir una vista sin inducir comprensión",
+      "primary_action": "Seleccionar Vista B",
+      "recovery_action": "Deshacer selección",
+      "events": ["VIEW_SELECTED", "ACTION_RECORDED", "UNDO_AVAILABLE", "UNDO_APPLIED"],
+      "recovery_contract": "INITIAL_HASH",
+      "visual": {"before_equivalent": true, "after_equivalent": true, "recovery_equivalent": true, "default_before": 0},
+      "after": {"view_id": "view_B", "reader_choice": "view_B", "cognition_claim": "NONE"}
+    },
+    "C1-T08": {
+      "cycle": 1,
+      "heading": "Comparar dos vistas equivalentes",
+      "primary_action": "Comparar y registrar observación",
+      "recovery_action": "Cerrar comparación",
+      "events": ["VIEW_COMPARISON_OPENED", "READER_OBSERVATION_RECORDED", "COMPARISON_CLOSED"],
+      "recovery_contract": "VIEWS_AND_OBSERVATION_PRESERVED",
+      "visual": {"before_equivalent": true, "after_equivalent": true, "recovery_equivalent": true, "default_before": 0},
+      "after": {"comparison_open": true, "observation_provenance": "READER", "views_preserved": true}
+    },
+    "C2-T02": {
+      "cycle": 2,
+      "heading": "Neutralizar una opción destacada",
+      "primary_action": "Neutralizar opciones",
+      "recovery_action": "Remontar escena neutralizada",
+      "events": ["SALIENCE_VIOLATION_DETECTED", "INTERACTION_BLOCKED", "OPTIONS_NEUTRALIZED", "CLEAN_SCENE_REMOUNTED"],
+      "recovery_contract": "CLEAN_NEUTRAL_SNAPSHOT",
+      "visual": {"before_equivalent": false, "after_equivalent": true, "recovery_equivalent": true, "default_before": 1},
+      "after": {"default_option": null, "reader_choice": null, "interaction_enabled": true, "salience_violation": "NEUTRALIZED"}
+    },
+    "C2-T05": {
+      "cycle": 2,
+      "heading": "Elegir una agrupación neutral",
+      "primary_action": "Seleccionar Agrupación B",
+      "recovery_action": "Deshacer agrupación",
+      "events": ["GROUP_SELECTED", "ACTION_RECORDED", "UNDO_AVAILABLE", "UNDO_APPLIED"],
+      "recovery_contract": "INITIAL_HASH",
+      "visual": {"before_equivalent": true, "after_equivalent": true, "recovery_equivalent": true, "default_before": 0},
+      "after": {"grouping_id": "option_B", "reader_choice": "option_B", "cognition_claim": "NONE"}
+    },
+    "C2-T06": {
+      "cycle": 2,
+      "heading": "Registrar qué quedó menos visible",
+      "primary_action": "Registrar límite de visibilidad",
+      "recovery_action": "Volver a vista anterior",
+      "events": ["VISIBILITY_LIMIT_RECORDED", "RETURN_OPTION_EXPOSED", "PREVIOUS_VIEW_RETURNED"],
+      "recovery_contract": "PREVIOUS_VIEW_WITH_LIMIT_PRESERVED",
+      "visual": {"before_equivalent": true, "after_equivalent": true, "recovery_equivalent": true, "default_before": 0},
+      "after": {"active_view_id": "view_grouped", "limit_provenance": "READER", "return_option_exposed": true}
+    },
+    "C3-T06": {
+      "cycle": 3,
+      "heading": "Contrastar casos sin favorecer una conclusión",
+      "primary_action": "Abrir comparación equilibrada",
+      "recovery_action": "Cerrar comparación",
+      "events": ["BALANCED_CASES_REQUESTED", "CASES_JUXTAPOSED", "SALIENCE_AUDITED", "COMPARISON_CLOSED"],
+      "recovery_contract": "BOTH_SETS_PRESERVED",
+      "visual": {"before_equivalent": true, "after_equivalent": true, "recovery_equivalent": true, "default_before": 0},
+      "after": {"comparison_open": true, "supporting_count": 2, "contradicting_count": 2, "confirmation": "NONE", "salience_audit": "PASS"}
+    }
+  },
+  "common_prohibitions": [
+    "No inferir comprensión desde una selección aislada",
+    "No destacar una opción como recomendada",
+    "No completar la observación del lector",
+    "No privilegiar evidencia favorable",
+    "No certificar comprensión, logro o validez"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "oe-irp-f2-w3-oracle-0.1",
+  "checkpoint": 28,
+  "wave": "W3",
+  "title": "Revelación factual mínima",
+  "source": "CP23 · matriz F2 · selección W3 aprobada",
+  "cases": {
+    "C2-T01": {"cycle": 2, "heading": "Explicar qué cambió al agrupar", "primary_action": "Solicitar explicación factual", "recovery_action": "Cerrar explicación", "events": ["FACT_REQUESTED", "FACT_REVEALED", "PROVENANCE_RECORDED", "DISCLOSURE_HIDDEN"], "requested_field": "grouping_change", "allowed_fields": ["grouping_key", "grouping_membership", "record_ids_preserved"], "recovery_contract": "GROUPED_SCENE_RESTORED_HISTORY_PRESERVED"},
+    "C2-T11": {"cycle": 2, "heading": "Revelar únicamente el contexto solicitado", "primary_action": "Solicitar dimensión D", "recovery_action": "Ocultar contexto", "events": ["FACT_REQUESTED", "ALLOWLIST_CHECKED", "FACT_REVEALED", "DISCLOSURE_HIDDEN"], "requested_field": "dimension_D", "allowed_fields": ["dimension_D"], "recovery_contract": "PREVIOUS_SCENE_RESTORED_HISTORY_PRESERVED"},
+    "C3-T03": {"cycle": 3, "heading": "Aportar contexto sin completar la hipótesis", "primary_action": "Solicitar dimensión C", "recovery_action": "Ocultar contexto", "events": ["FACT_REQUESTED", "ALLOWLIST_CHECKED", "FACT_REVEALED", "DISCLOSURE_HIDDEN"], "requested_field": "dimension_C", "allowed_fields": ["dimension_C"], "recovery_contract": "PROVISIONAL_HYPOTHESIS_PRESERVED"}
+  },
+  "common_prohibitions": ["No revelar campos adyacentes no solicitados", "No interpretar la relevancia del hecho", "No recomendar una acción o representación", "No confirmar ni refutar una hipótesis provisional", "No certificar comprensión, logro o validez"]
+}

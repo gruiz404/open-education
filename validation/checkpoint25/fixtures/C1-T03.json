@@ -1,0 +1,21 @@
+{
+  "schema_version": "oe-irp-f2-fixture-0.1",
+  "test_id": "C1-T03",
+  "cycle": 1,
+  "seed": "OE001-F2-C1-T03-S01",
+  "scene": "S02 · Conjunto completo con filtro disponible",
+  "primary_decision": "ALLOW",
+  "policy_decision_ref": "B2:C1-T03:ALLOW",
+  "initial_content": {
+    "filter": null,
+    "visible_record_ids": ["R01", "R02", "R03", "R04", "R05", "R06"],
+    "records": [
+      {"record_id": "R01", "label": "Caso 1", "group": "A", "value": 12, "provenance": ["fixture:OE001-F2", "record:R01"]},
+      {"record_id": "R02", "label": "Caso 2", "group": "B", "value": 18, "provenance": ["fixture:OE001-F2", "record:R02"]},
+      {"record_id": "R03", "label": "Caso 3", "group": "A", "value": 9, "provenance": ["fixture:OE001-F2", "record:R03"]},
+      {"record_id": "R04", "label": "Caso 4", "group": "B", "value": 15, "provenance": ["fixture:OE001-F2", "record:R04"]},
+      {"record_id": "R05", "label": "Caso 5", "group": "A", "value": 21, "provenance": ["fixture:OE001-F2", "record:R05"]},
+      {"record_id": "R06", "label": "Caso 6", "group": "B", "value": 11, "provenance": ["fixture:OE001-F2", "record:R06"]}
+    ]
+  }
+}

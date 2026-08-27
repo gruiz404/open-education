@@ -1,0 +1,51 @@
+name: Checkpoint 27 F2 Wave 2
+
+on:
+  push:
+    branches:
+      - checkpoint-27-f2-wave2
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-wave2:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: validation/checkpoint27
+    steps:
+      - name: Checkout isolated candidate branch
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install pinned browser runner
+        run: npm install --no-save playwright@1.55.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify independent W2 contract and unit tests
+        run: |
+          sha256sum -c browser/contract-oracle.sha256
+          npm test
+
+      - name: Run six W2 cases in Chromium
+        run: npm run browser:test
+
+      - name: Run external package audit
+        run: node browser/audit-browser-results.mjs > browser-results/audit.json
+
+      - name: Upload Checkpoint 27 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint27-F2-W2-Evidence
+          path: validation/checkpoint27/browser-results
+          if-no-files-found: error
+          retention-days: 30

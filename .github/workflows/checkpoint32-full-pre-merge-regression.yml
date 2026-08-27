@@ -1,0 +1,98 @@
+name: Checkpoint 32 Full Pre-Merge Regression
+
+on:
+  push:
+    branches:
+      - checkpoint-32-full-pre-merge-regression
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-regression:
+    name: regression-${{ matrix.id }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {id: CP25, dir: validation/checkpoint25, oracle: browser/golden.sha256, artifact: OE-001-CP32-Regression-CP25}
+          - {id: CP26, dir: validation/checkpoint26, oracle: browser/contract-oracle.sha256, artifact: OE-001-CP32-Regression-CP26}
+          - {id: CP27, dir: validation/checkpoint27, oracle: browser/contract-oracle.sha256, artifact: OE-001-CP32-Regression-CP27}
+          - {id: CP28, dir: validation/checkpoint28, oracle: browser/contract-oracle.sha256, artifact: OE-001-CP32-Regression-CP28}
+          - {id: CP29, dir: validation/checkpoint29, oracle: browser/contract-oracle.sha256, artifact: OE-001-CP32-Regression-CP29}
+    steps:
+      - name: Checkout isolated regression branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned browser runner
+        working-directory: ${{ matrix.dir }}
+        run: npm install --no-save playwright@1.55.0
+      - name: Install Chromium
+        working-directory: ${{ matrix.dir }}
+        run: npx playwright install --with-deps chromium
+      - name: Verify oracle and unit contract
+        working-directory: ${{ matrix.dir }}
+        run: |
+          sha256sum -c ${{ matrix.oracle }}
+          npm test
+      - name: Run Chromium suite
+        working-directory: ${{ matrix.dir }}
+        run: npm run browser:test
+      - name: Run external suite audit
+        working-directory: ${{ matrix.dir }}
+        run: node browser/audit-browser-results.mjs > browser-results/audit.json
+      - name: Verify suite manifest
+        working-directory: ${{ matrix.dir }}/browser-results
+        run: sha256sum -c SHA256SUMS.txt
+      - name: Upload fresh suite evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.dir }}/browser-results
+          if-no-files-found: error
+          retention-days: 90
+
+  consolidated-regression-audit:
+    name: consolidated-regression-audit
+    needs: chromium-regression
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout isolated regression branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate closure and readiness contracts
+        run: |
+          cd validation/checkpoint30 && npm test
+          cd ../checkpoint31 && npm test
+          cd ../checkpoint32 && npm test
+      - name: Download fresh suite evidence
+        uses: actions/download-artifact@v4
+        with:
+          pattern: OE-001-CP32-Regression-*
+          path: validation/checkpoint32/artifacts/sources
+      - name: Audit full regression
+        working-directory: validation/checkpoint32
+        run: npm run audit
+      - name: Verify consolidated evidence manifest
+        working-directory: validation/checkpoint32/artifacts/evidence
+        run: sha256sum -c SHA256SUMS.txt
+      - name: Upload consolidated CP32 evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: OE-001-Checkpoint32-Full-Pre-Merge-Regression-Evidence
+          path: validation/checkpoint32/artifacts/evidence
+          if-no-files-found: error
+          retention-days: 90

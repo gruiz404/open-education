@@ -1,0 +1,19 @@
+{
+  "schema_version": "oe-irp-f2-fixture-0.1",
+  "test_id": "C2-T02",
+  "cycle": 2,
+  "seed": "OE001-F2-C2-T02-S01",
+  "scene": "S08 · Configuración con default inyectado",
+  "primary_decision": "BLOCK",
+  "policy_decision_ref": "B2:C2-T02:BLOCK",
+  "initial_content": {
+    "default_option": "view_B",
+    "reader_choice": null,
+    "interaction_enabled": false,
+    "salience_violation": true,
+    "options": [
+      {"option_id": "view_A", "label": "Vista A", "salience_token": "neutral"},
+      {"option_id": "view_B", "label": "Vista B", "salience_token": "highlighted"}
+    ]
+  }
+}

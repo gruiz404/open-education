@@ -1,0 +1,21 @@
+{
+  "schema_version": "oe-irp-f2-fixture-0.1",
+  "test_id": "C3-T04",
+  "cycle": 3,
+  "seed": "OE001-F2-C3-T04-S01",
+  "scene": "S16 · Componente de predicción no autorizado",
+  "primary_decision": "BLOCK",
+  "policy_decision_ref": "B2:C3-T04:BLOCK:C4",
+  "requested_component": "prediction_prompt",
+  "initial_content": {
+    "cycle4_enabled": false,
+    "hypothesis_status": "UNEVALUATED",
+    "mounted_components": ["observation_table", "context_note"],
+    "limit_recorded": false,
+    "records": [
+      {"record_id": "R21", "label": "Observación alfa", "group": "N", "value": 8, "provenance": ["fixture:OE001-F2", "record:R21"]},
+      {"record_id": "R22", "label": "Observación beta", "group": "N", "value": 13, "provenance": ["fixture:OE001-F2", "record:R22"]},
+      {"record_id": "R23", "label": "Observación gamma", "group": "N", "value": 11, "provenance": ["fixture:OE001-F2", "record:R23"]}
+    ]
+  }
+}

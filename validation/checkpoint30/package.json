@@ -1,0 +1,12 @@
+{
+  "name": "oe-001-irp-f2-consolidated-closure",
+  "version": "0.1.0-candidate",
+  "private": true,
+  "type": "module",
+  "description": "Checkpoint 30: cierre consolidado auditable de las 19 pruebas F2 ejecutadas en W1-W4.",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "sources:download": "node scripts/download-official-artifacts.mjs",
+    "closure:audit": "node scripts/audit-f2-closure.mjs"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "open-education.checkpoint31.integration-readiness.v1",
+  "checkpoint": 31,
+  "gate": "PASS_F2_INTEGRATION_READINESS_AUDIT",
+  "criterion": "LINEAR_CHAIN_ADDITIVE_SCOPE_PROTECTED_MAIN",
+  "next_gate": "ENABLE_FULL_PRE_MERGE_REGRESSION",
+  "repository": "gruiz404/open-education",
+  "protected_main": "72e4d3410b74f9de4252c93f484304339d71cf1b",
+  "official_cp30_commit": "9d325c0f75e9b8c92d029781ccc2e90ca77e8b37",
+  "official_cp30_tree": "1044f79374a37f1bd5bdcee052157c5628fb26f3",
+  "expected_diff": {
+    "status": "ahead",
+    "ahead_by": 12,
+    "behind_by": 0,
+    "files": 86,
+    "insertions": 7712,
+    "deletions": 0,
+    "allowed_prefixes": [
+      ".github/workflows/checkpoint",
+      "validation/checkpoint"
+    ]
+  },
+  "branch_chain": [
+    {"branch": "main", "tip": "72e4d3410b74f9de4252c93f484304339d71cf1b", "ahead_from_previous": 0},
+    {"branch": "checkpoint-25-browser-validation", "tip": "8b1785c33852b5be96f97c6622b16f79af983c6b", "ahead_from_previous": 5},
+    {"branch": "checkpoint-26-f2-wave1", "tip": "c2aa8d734b64e9ab3f9a6f236dff0d5b142aedb2", "ahead_from_previous": 2},
+    {"branch": "checkpoint-27-f2-wave2", "tip": "119073d4dff7820f872143e55e3444e7fdc98659", "ahead_from_previous": 2},
+    {"branch": "checkpoint-28-f2-wave3", "tip": "f64123d7e3efd9e04e9a8978f5713bda14bc96e1", "ahead_from_previous": 1},
+    {"branch": "checkpoint-29-f2-wave4", "tip": "af1ad03006394ad8e0a702a8de7d2dd2f8827f7c", "ahead_from_previous": 1},
+    {"branch": "checkpoint-30-f2-consolidated-closure", "tip": "9d325c0f75e9b8c92d029781ccc2e90ca77e8b37", "ahead_from_previous": 1}
+  ],
+  "historical_branches_to_retain": [
+    "checkpoint-25-browser-validation",
+    "checkpoint-26-f2-wave1",
+    "checkpoint-27-f2-wave2",
+    "checkpoint-28-f2-wave3",
+    "checkpoint-29-f2-wave4",
+    "checkpoint-30-f2-consolidated-closure"
+  ],
+  "prohibited_actions": [
+    "MERGE_TO_MAIN",
+    "MODIFY_GITHUB_PAGES",
+    "MODIFY_RELEASED_BASELINES",
+    "PUBLISH_RELEASE",
+    "ENABLE_CYCLE_4",
+    "DELETE_HISTORICAL_BRANCHES"
+  ],
+  "recommendation": "RETAIN_BRANCHES_AND_RUN_ONE_FULL_CHAIN_REGRESSION_BEFORE_PR"
+}
+
