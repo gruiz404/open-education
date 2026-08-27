@@ -1,1 +1,9 @@
-m«ë
+{
+  "name": "open-education-checkpoint34",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "audit": "node scripts/audit-controlled-pr-authorization.mjs"
+  }
+}

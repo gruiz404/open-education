@@ -1,1 +1,19 @@
-m«ë
+{
+  "schema": "open-education.checkpoint34.controlled-pr-authorization.v1",
+  "checkpoint": 34,
+  "repository": "gruiz404/open-education",
+  "gate": "PASS_CONTROLLED_PR_AUTHORIZATION_REVIEW",
+  "criterion": "LIVE_IDENTITY_AND_PR_ABSENCE_CONFIRMED; USER_AUTHORIZATION_STILL_REQUIRED",
+  "next_gate": "WAIT_FOR_EXPLICIT_USER_AUTHORIZATION_TO_OPEN_PULL_REQUEST",
+  "protected_main": "72e4d3410b74f9de4252c93f484304339d71cf1b",
+  "candidate_branch": "checkpoint-32-full-pre-merge-regression",
+  "candidate_commit": "42c61ad7fbe7ec8caf14e1ff0942fa3b4249bbf6",
+  "candidate_tree": "2f3aeef8111e8478943ba79e90d73195e29038cf",
+  "cp33_branch": "checkpoint-33-controlled-pr-preparation",
+  "cp33_commit": "0128acd99fa86b791c36611424917f8d98e15993",
+  "expected_candidate_delta": {"commits": 16, "files": 100, "insertions": 8222, "deletions": 0},
+  "required_contract_tests": [25, 26, 27, 28, 29, 30, 31, 32, 33, 34],
+  "allowed_cp34_prefixes": [".github/workflows/checkpoint34-", "validation/checkpoint34/"],
+  "prohibited_actions": ["OPEN_PULL_REQUEST", "MERGE_TO_MAIN", "MODIFY_GITHUB_PAGES", "MODIFY_RELEASED_BASELINES", "PUBLISH_RELEASE", "ENABLE_CYCLE_4", "DELETE_HISTORICAL_BRANCHES"],
+  "authorization": {"open_pull_request": "USER_EXPLICIT_AUTHORIZATION_REQUIRED", "merge_to_main": "USER_EXPLICIT_AUTHORIZATION_REQUIRED"}
+}

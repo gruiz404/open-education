@@ -1,1 +1,48 @@
-m«ë
+import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
+import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join, relative, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const here = dirname(fileURLToPath(import.meta.url));
+const checkpoint = resolve(here, "..");
+const root = resolve(checkpoint, "../..");
+const evidence = resolve(checkpoint, "artifacts/evidence");
+const contract = JSON.parse(readFileSync(resolve(checkpoint, "controlled-pr-authorization-contract.json"), "utf8"));
+const checks=[];
+const check=(id, ok, observed)=>checks.push({id,status:ok?"PASS":"FAIL",observed});
+const git=(...args)=>execFileSync("git",args,{cwd:root,encoding:"utf8"}).trim();
+const ref=(name)=>git("rev-parse",name);
+
+const main=ref("origin/main");
+const candidate=ref(`origin/${contract.candidate_branch}`);
+const candidateTree=ref(`${candidate}^{tree}`);
+const cp33=ref(`origin/${contract.cp33_branch}`);
+const mergeBase=git("merge-base",main,candidate);
+const stats=git("diff","--numstat",`${main}..${candidate}`).split("\n").filter(Boolean).map(line=>{const [a,d,p]=line.split("\t"); return {a:Number(a),d:Number(d),p};});
+const candidateDelta={commits:Number(git("rev-list","--count",`${main}..${candidate}`)),files:stats.length,insertions:stats.reduce((n,x)=>n+x.a,0),deletions:stats.reduce((n,x)=>n+x.d,0)};
+const cp34Paths=git("diff","--name-only",`${candidate}..HEAD`).split("\n").filter(Boolean);
+const prStatePath=process.env.CP34_PR_STATE_JSON || resolve(checkpoint,"artifacts/input/live-pr-state.json");
+const prs=JSON.parse(readFileSync(prStatePath,"utf8"));
+
+check("LIVE_MAIN_SHA",main===contract.protected_main,main);
+check("LIVE_CANDIDATE_SHA",candidate===contract.candidate_commit,candidate);
+check("LIVE_CANDIDATE_TREE",candidateTree===contract.candidate_tree,candidateTree);
+check("LIVE_CP33_SHA",cp33===contract.cp33_commit,cp33);
+check("MAIN_IS_CANDIDATE_MERGE_BASE",mergeBase===main,mergeBase);
+for(const [key,value] of Object.entries(contract.expected_candidate_delta)) check(`CANDIDATE_DELTA_${key.toUpperCase()}`,candidateDelta[key]===value,candidateDelta[key]);
+check("NO_PULL_REQUEST_EXISTS",Array.isArray(prs)&&prs.length===0,Array.isArray(prs)?prs.length:"non-array");
+check("CP34_SCOPE_ALLOWED",cp34Paths.every(p=>contract.allowed_cp34_prefixes.some(prefix=>p.startsWith(prefix))),cp34Paths);
+check("OPEN_PR_REMAINS_UNAUTHORIZED",contract.prohibited_actions.includes("OPEN_PULL_REQUEST"),contract.authorization.open_pull_request);
+check("MERGE_REMAINS_UNAUTHORIZED",contract.prohibited_actions.includes("MERGE_TO_MAIN"),contract.authorization.merge_to_main);
+const failed=checks.filter(x=>x.status==="FAIL");
+const result={schema:"open-education.checkpoint34.audit.v1",checkpoint:34,timestamp_utc:new Date().toISOString(),repository:contract.repository,gate:failed.length?"BLOCK_CONTROLLED_PR_AUTHORIZATION_REVIEW":contract.gate,criterion:contract.criterion,next_gate:failed.length?"BLOCK_OPEN_PULL_REQUEST":contract.next_gate,live:{main,candidate,candidate_tree:candidateTree,cp33,pull_requests:prs.length,candidate_delta:candidateDelta},protections:{main_changed:false,pull_request:"NOT_OPENED",merge:"NOT_AUTHORIZED",pages_changed:false,publication:"NOT_AUTHORIZED",cycle4:"NOT_AUTHORIZED",historical_branches:"RETAIN"},totals:{checks:checks.length,passed:checks.length-failed.length,failed:failed.length},checks};
+mkdirSync(evidence,{recursive:true});
+writeFileSync(join(evidence,"controlled-pr-authorization-audit.json"),`${JSON.stringify(result,null,2)}\n`);
+writeFileSync(join(evidence,"live-pr-state.json"),`${JSON.stringify(prs,null,2)}\n`);
+writeFileSync(join(evidence,"contract-snapshot.json"),`${JSON.stringify(contract,null,2)}\n`);
+writeFileSync(join(evidence,"protection-status.json"),`${JSON.stringify(result.protections,null,2)}\n`);
+const files=[]; const walk=d=>{for(const n of readdirSync(d).sort()){if(n==="SHA256SUMS.txt")continue;const p=join(d,n);statSync(p).isDirectory()?walk(p):files.push(p);}}; walk(evidence);
+writeFileSync(join(evidence,"SHA256SUMS.txt"),files.map(p=>`${createHash("sha256").update(readFileSync(p)).digest("hex")}  ${relative(evidence,p)}`).join("\n")+"\n");
+console.log(JSON.stringify(result,null,2));
+if(failed.length) process.exit(1);
